@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.guillermo.popularmovies.R;
+import com.example.guillermo.popularmovies.backgroundtasks.FetchPopularMoviesTask;
 
 import java.util.List;
 
@@ -26,9 +27,8 @@ public class MainGridFragment extends Fragment{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        new FetchPopularMoviesTask().execute();
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Override
