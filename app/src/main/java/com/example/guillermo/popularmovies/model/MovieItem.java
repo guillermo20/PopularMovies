@@ -1,5 +1,6 @@
 package com.example.guillermo.popularmovies.model;
 
+import android.net.Uri;
 import android.util.Log;
 
 import org.json.JSONException;
@@ -90,6 +91,11 @@ public class MovieItem {
 
     public double getVoteAverage() {
         return voteAverage;
+    }
+
+    public Uri getThumbUri(){
+        Uri uri = Uri.parse("http://image.tmdb.org/t/p/w185/"+posterPath).buildUpon().build();
+        return uri;
     }
 
     public static MovieItem toMovieItemFromJson(String strJson){
