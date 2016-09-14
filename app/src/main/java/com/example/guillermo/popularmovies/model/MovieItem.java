@@ -94,7 +94,7 @@ public class MovieItem {
     }
 
     public Uri getPosterUri(){
-        Uri uri = Uri.parse("http://image.tmdb.org/t/p/w300/"+posterPath).buildUpon().build();
+        Uri uri = Uri.parse("http://image.tmdb.org/t/p/w185/"+posterPath).buildUpon().build();
         return uri;
     }
 
