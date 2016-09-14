@@ -93,7 +93,7 @@ public class MovieItem {
         return voteAverage;
     }
 
-    public Uri getThumbUri(){
+    public Uri getPosterUri(){
         Uri uri = Uri.parse("http://image.tmdb.org/t/p/w300/"+posterPath).buildUpon().build();
         return uri;
     }

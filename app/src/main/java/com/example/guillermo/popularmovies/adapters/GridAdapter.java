@@ -35,9 +35,9 @@ public class GridAdapter extends ArrayAdapter<MovieItem> {
         } else{
             imageView = (ImageView) convertView;
         }
-        Log.v(LOG_TAG,""+movieItem.getThumbUri());
+        Log.v(LOG_TAG,""+movieItem.getPosterUri());
         Picasso.with(context)
-                .load(movieItem.getThumbUri())
+                .load(movieItem.getPosterUri())
                 .resize(400,540).centerInside()
                 .into(imageView);
         return imageView;
