@@ -39,6 +39,7 @@ public class MainGridFragment extends Fragment {
     private ArrayAdapter<MovieItem> adapter;
     private ArrayAdapter<String> sortingAdapter;
     private String options[] = {"Most Popular","Most Rated"};
+    private int option=0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,10 +54,16 @@ public class MainGridFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        if (backgroundTask == null) {
+
             backgroundTask = new FetchPopularMoviesTask(adapter);
-        }
-        backgroundTask.execute();
+            if (option==0){
+                backgroundTask.execute(FetchPopularMoviesTask.POPULAR_MOVIES);
+            }
+            if (option==1){
+                backgroundTask.execute(FetchPopularMoviesTask.TOP_RATED_MOVIES);
+            }
+
+
     }
 
     @Override
@@ -93,11 +100,14 @@ public class MainGridFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.v(LOG_TAG,"clicked on item from spinner");
+                option=position;
+                backgroundTask = new FetchPopularMoviesTask(adapter);
                 switch (position){
                     case 0:
-                        
+                        backgroundTask.execute(FetchPopularMoviesTask.POPULAR_MOVIES);
                         break;
                     case 1:
+                        backgroundTask.execute(FetchPopularMoviesTask.TOP_RATED_MOVIES);
                         break;
                 }
             }
