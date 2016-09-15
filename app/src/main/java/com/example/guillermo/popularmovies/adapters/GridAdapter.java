@@ -1,7 +1,6 @@
 package com.example.guillermo.popularmovies.adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -35,9 +34,9 @@ public class GridAdapter extends ArrayAdapter<MovieItem> {
         } else{
             imageView = (ImageView) convertView;
         }
-        Log.v(LOG_TAG,""+movieItem.getPosterUri());
+        //Log.v(LOG_TAG,""+movieItem.getPosterUri(MovieItem.IMAGE_SIZE_W154));
         Picasso.with(context)
-                .load(movieItem.getPosterUri())
+                .load(movieItem.getPosterUri(MovieItem.IMAGE_SIZE_W185))
                 .resize(400,540).centerInside()
                 .into(imageView);
         return imageView;
