@@ -10,8 +10,9 @@ public class MovieDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_movie_detail);
         if (savedInstanceState == null){
-            getFragmentManager().beginTransaction().add(new MovieDetailsFragment(),MovieDetailsFragment.class.getSimpleName()).commit();
+            getFragmentManager().beginTransaction().add(R.id.activity_movie_detail_id,new MovieDetailsFragment()).commit();
         }
     }
 

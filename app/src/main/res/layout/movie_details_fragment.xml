@@ -4,9 +4,14 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:paddingTop="80dp"
+        android:text="prueba"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:id="@+id/movie_details_title"/>
+        android:id="@+id/movie_details_title"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/colorPrimaryDark"/>
 
 
     <TextView
