@@ -77,16 +77,10 @@ public class MainGridFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getActivity(),MovieDetailActivity.class));
+                MovieItem item = (MovieItem) parent.getItemAtPosition(position);
+                startActivity(new Intent(getActivity(),MovieDetailActivity.class).putExtra(MovieItem.class.getSimpleName(),item));
             }
         });
-        /*if (backgroundTask.getListMovieItem() != null) {
-            for (MovieItem item : backgroundTask.getListMovieItem()) {
-                Log.v(LOG_TAG, "Item =" + item.getTitle());
-            }
-        }*/
-        //GridAdapter adapter = new GridAdapter(getActivity(),backgroundTask.getListMovieItem());
-
         return root;
     }
 

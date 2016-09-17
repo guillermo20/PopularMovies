@@ -6,10 +6,12 @@ import android.util.Log;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
+
 /**
  * Created by guillermo on 11/09/16.
  */
-public class MovieItem {
+public class MovieItem implements Serializable{
 
     private String posterPath;
     private boolean adult;
