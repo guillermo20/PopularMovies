@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">PopularMovies</string>
     <string name="sort_by_string">Sort by</string>
+    <string name="title_activity_movie_detail">MovieDetailActivity</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.guillermo.popularmovies.fragments;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Spinner;
 
+import com.example.guillermo.popularmovies.MovieDetailActivity;
 import com.example.guillermo.popularmovies.R;
 import com.example.guillermo.popularmovies.adapters.GridAdapter;
 import com.example.guillermo.popularmovies.backgroundtasks.FetchPopularMoviesTask;
@@ -75,7 +77,7 @@ public class MainGridFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.i(LOG_TAG,"STarts the detail activity");
+                startActivity(new Intent(getActivity(),MovieDetailActivity.class));
             }
         });
         /*if (backgroundTask.getListMovieItem() != null) {
