@@ -30,6 +30,7 @@ public class MovieItem implements Serializable{
     public  static  final String IMAGE_SIZE_W154="w154";
     public  static  final String IMAGE_SIZE_W185="w185";
     public  static  final String IMAGE_SIZE_W342="w342";
+    public  static  final String IMAGE_SIZE_W500="w500";
 
     public MovieItem(String posterPath, boolean adult, String overview, String releaseDate, String movieId, String originalTitle, String originalLanguage, String title, String backdropPath, double popularity, long voteCount, boolean video, double voteAverage) {
         this.posterPath = posterPath;
@@ -102,6 +103,11 @@ public class MovieItem implements Serializable{
     public Uri getPosterUri(String posterSize){
         Uri uri = Uri.parse("http://image.tmdb.org/t/p/"+posterSize+"/"+posterPath).buildUpon().build();
         return uri;
+    }
+
+    public Uri getBackdropUri(String posterSize){
+        Uri uri = Uri.parse("http://image.tmdb.org/t/p/"+posterSize+"/"+backdropPath).buildUpon().build();
+        return  uri;
     }
 
     public static MovieItem toMovieItemFromJson(String strJson){
