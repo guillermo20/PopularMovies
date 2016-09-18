@@ -3,7 +3,6 @@ package com.example.guillermo.popularmovies.fragments;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -97,7 +96,7 @@ public class MainGridFragment extends Fragment {
         MenuItem menuItem = menu.findItem(R.id.main_menu_spinner);
         Spinner spinner = (Spinner) MenuItemCompat.getActionView(menuItem);
         spinner.setAdapter(sortingAdapter);
-        spinner.getPopupBackground().setColorFilter(Color.BLUE, PorterDuff.Mode.SCREEN);
+        spinner.getPopupBackground().setColorFilter(getResources().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SCREEN);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
