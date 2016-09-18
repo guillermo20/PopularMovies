@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
+import com.example.guillermo.popularmovies.R;
 import com.example.guillermo.popularmovies.model.MovieItem;
 import com.squareup.picasso.Picasso;
 
@@ -38,6 +39,7 @@ public class GridAdapter extends ArrayAdapter<MovieItem> {
         Picasso.with(context)
                 .load(movieItem.getPosterUri(MovieItem.IMAGE_SIZE_W185))
                 .resize(400,540).centerInside()
+                .error(R.drawable.error)
                 .into(imageView);
         return imageView;
     }

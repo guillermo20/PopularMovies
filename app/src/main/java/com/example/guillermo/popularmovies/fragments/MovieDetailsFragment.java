@@ -41,7 +41,7 @@ public class MovieDetailsFragment extends Fragment {
         textViewVoteAverage.setText("Vote: "+movieItem.getVoteAverage());
         textViewSynopsis.setText("Synopsis: "+movieItem.getOverview());
         ImageView imageView = (ImageView) rootView.findViewById(R.id.image_thumbnail);
-        Picasso.with(getActivity()).load(movieItem.getBackdropUri(MovieItem.IMAGE_SIZE_W500)).into(imageView);
+        Picasso.with(getActivity()).load(movieItem.getBackdropUri(MovieItem.IMAGE_SIZE_W500)).error(R.drawable.error).into(imageView);
 
         return rootView;
     }

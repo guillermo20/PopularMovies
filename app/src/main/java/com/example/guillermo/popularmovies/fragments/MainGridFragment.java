@@ -1,9 +1,12 @@
 package com.example.guillermo.popularmovies.fragments;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.util.Log;
@@ -17,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.guillermo.popularmovies.MovieDetailActivity;
 import com.example.guillermo.popularmovies.R;
@@ -57,14 +61,16 @@ public class MainGridFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-            backgroundTask = new FetchPopularMoviesTask(adapter);
+            backgroundTask = new FetchPopularMoviesTask(getActivity(),adapter);
             if (option==0){
                 backgroundTask.execute(FetchPopularMoviesTask.POPULAR_MOVIES);
             }
             if (option==1){
                 backgroundTask.execute(FetchPopularMoviesTask.TOP_RATED_MOVIES);
             }
-
+            if (!isNetworkConectivityOnline()){
+                Toast.makeText(getActivity(),"Couldn't refresh info",Toast.LENGTH_SHORT).show();
+            }
 
     }
 
@@ -97,7 +103,7 @@ public class MainGridFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.v(LOG_TAG,"clicked on item from spinner");
                 option=position;
-                backgroundTask = new FetchPopularMoviesTask(adapter);
+                backgroundTask = new FetchPopularMoviesTask(getActivity(),adapter);
                 switch (position){
                     case 0:
                         backgroundTask.execute(FetchPopularMoviesTask.POPULAR_MOVIES);
@@ -116,4 +122,9 @@ public class MainGridFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+    public boolean isNetworkConectivityOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
 }
