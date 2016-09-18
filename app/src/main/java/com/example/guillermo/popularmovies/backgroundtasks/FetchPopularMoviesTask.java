@@ -97,7 +97,7 @@ public class FetchPopularMoviesTask extends AsyncTask<String, Void, List<MovieIt
         BufferedReader reader = null;
         String forecastJsonStr = "";
         String THE_MOVIEDB_API_KEY = BuildConfig.THE_MOVIEDB_API_KEY;
-
+        //this part of the code was taken from the sunshine example on how to retreive the data from a rest api
         if(!isNetworkConectivityOnline()){
             return null;
         }
@@ -162,6 +162,11 @@ public class FetchPopularMoviesTask extends AsyncTask<String, Void, List<MovieIt
         return listMovieItem;
     }
 
+
+    /**
+     * checks if the smartphone has an active conection to internet.
+     * @return
+     */
     public boolean isNetworkConectivityOnline() {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();

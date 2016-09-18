@@ -10,6 +10,7 @@ import java.io.Serializable;
 
 /**
  * Created by guillermo on 11/09/16.
+ * needed object to handle all the data fetched from themoviedb server.
  */
 public class MovieItem implements Serializable{
 
