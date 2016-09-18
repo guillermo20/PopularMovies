@@ -31,7 +31,13 @@ public class MovieDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.movie_details_fragment,container,false);
         TextView textViewTitle = (TextView) rootView.findViewById(R.id.movie_details_title);
-        textViewTitle.setText(movieItem.getTitle());
+        TextView textViewReleaseDate = (TextView) rootView.findViewById(R.id.movie_details_release_date);
+        TextView textViewVoteAverage = (TextView) rootView.findViewById(R.id.movie_details_vote_avg);
+        TextView textViewSynopsis = (TextView) rootView.findViewById(R.id.movie_details_synopsis);
+        textViewTitle.setText("Title: "+movieItem.getTitle());
+        textViewReleaseDate.setText("Release date: "+movieItem.getReleaseDate());
+        textViewVoteAverage.setText("Vote: "+movieItem.getVoteAverage());
+        textViewSynopsis.setText("Synopsis: "+movieItem.getOverview());
         return rootView;
     }
 }

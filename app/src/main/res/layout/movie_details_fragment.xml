@@ -4,31 +4,46 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:paddingTop="80dp"
-        android:text="prueba"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/movie_details_title"
-        android:gravity="center"
-        android:textSize="40sp"
-        android:textColor="@color/colorPrimaryDark"/>
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"/>
 
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/movie_details_release_date"/>
+        android:textSize="12sp"
+        android:id="@+id/movie_details_release_date"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"/>
 
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/movie_details_vote_avg"/>
+        android:textSize="12sp"
+        android:id="@+id/movie_details_vote_avg"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"/>
 
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/movie_details_synopsis"/>
+        android:textSize="12sp"
+        android:id="@+id/movie_details_synopsis"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"/>
 
 </LinearLayout>
